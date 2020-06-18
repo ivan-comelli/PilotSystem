@@ -35,6 +35,7 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
+                flex-direction: column;
             }
 
             .position-ref {
@@ -49,7 +50,8 @@
 
             .content {
                 text-align: center;
-                width: 70vw;
+                background: #f7f7f7;
+                padding: 3em;
             }
 
             .title {
@@ -69,10 +71,36 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .navBar {
+                padding: 1em;
+                height: 6em;
+                background: #484852;
+                display: flex;
+                align-items: center;
+                border-bottom: solid .1em #fbb0b0;
+                box-shadow: inset 0px 4px 21px -11px black;
+            }
+            .navBar span {
+                color: white;
+                font-size: 2vw;
+            }
+            .subBar span {
+                color: white;
+                font-size: 3vw;
+            }
+            .subBar {
+                padding: 1em;
+                height: 18em;
+                background: #fd6969;
+                display: flex;
+                align-items: center;
+                box-shadow: inset 0px -10px 20px 0px #00000059;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="container-fluid">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -86,9 +114,14 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
+            <div class="navBar row">
+                <span>Sistema de piloto</span>
+            </div>
+            <div class="subBar row">
+                <span>Sistema de piloto</span>
+            </div>
+            <div class="content flex-center full-height row">
+                <div class="title m-b-md row">
                     @yield('title')
                 </div>
                 @yield('content')
